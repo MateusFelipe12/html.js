@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container">
+            <h2>Cadastrar um novo produto</h2>
+        </div>
+
+        <form id="formulario">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="codigo" name="codigo">
+                            <label for="codigo">Código</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="descricao" name="descricao">
+                            <label for="descricao">Descrição</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="valorVenda" name="valorVenda">
+                            <label for="valorVenda">Valor de venda</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="precoCusto" name="precoCusto">
+                            <label for="precoCusto">Preço de custo</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="estoque" name="estoque">
+                            <label for="estoque">Quantidade em estoque</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <select name="medida" id="medida" class="form-select">
+                                <option selected disabled>Selecione uma opção</option>
+                                <option value="UN">UN - Unidade</option>
+                                <option value="KG">KG - Quilograma</option>
+                                <option value="M">M - Metros</option>
+                                <option value="M2">M2 - Metros Quadrados</option>
+                                <option value="CX">CX - Caixa</option>
+                            </select>
+                            <label for="medida">Unidade de Medida</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <select name="tipoProduto" id="tipoProduto" class="form-select">
+                                <option selected disabled>Selecione uma opção</option>
+                                <option value="00">Mercadoria pra Venda</option>
+                                <option value="01">Matéria-Prima</option>
+                                <option value="09">Serviços</option>
+                                <option value="07">Produtos em Processo</option>
+                                <option value="05">Produtos Acabados</option>
+                            </select>
+                            <label for="tipoProduto">Tipo do Produto</label>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Cadastrar" class="btn btn-primary" style="float: right;">
+                <input type="reset" value="Limpar campos" class="btn btn-warning"
+                    style="float: right; margin-right: 5px;">
+            </div>
+        </form>
+
+        <hr style="margin-top: 50px;">
+
+        <h2>Produtos Cadastrados</h2>
+        <table class="table" id="produtosCadastrados">
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Valor de Venda</th>
+                <th>Preço de Custo</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
