@@ -9,14 +9,21 @@ formulario.addEventListener('submit', (evento) => {
     let data = $('#formulario').serializeArray();
     let produto = arrayToObject(data);
 
-    adicionarProdutoNaTabela(produto);
-
-
-
+    //SET - Setar, definir, salvar
+    //GET - Pegar, buscar
     //recuperar os registros já cadastrados no banco
     //como no banco ta cadastrado como string, precisamos do JSON.parse()
     //para forçar a ser um objeto/array
     let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+
+    let codDuplicado = produtos
+        .map(produtos => JSON.parse(produtos).codigo)
+            .includes(produtos.codigo);
+        
+    if(codDuplicado) {
+        alert('Esse produto ja consta na base de dados');
+        return;
+    } 
     
     //adiciona o produto que esta sendo cadastrado ao array de produtos ja
     //cadastrados no banco de dados
@@ -26,6 +33,9 @@ formulario.addEventListener('submit', (evento) => {
     //atualizar os produtos no banco de dados
     //- precisa ser com JSON.stringify() pois o banco apenas aceita string
     localStorage.setItem('produtos', JSON.stringify(produtos))
+
+    //so deve adicionar o produto na tabela caso nao tiver outro codigo cadastrado
+    adicionarProdutoNaTabela(produto);
 });
 
 // o parametro "array" deve ser gerado a partir da funcao
